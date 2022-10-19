@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Arvo:wght@400;700&display=swap');
+
+:root {
+  --main-bg-color: linear-gradient(180deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 0%, rgba(26,199,235,1) 100%);
+  --main-color: #1a237e;
+  --main-color-light: #534bae;
+  --main-color-dark: #000051;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 16px;
+  font-family: 'Arvo', serif;}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+}
+
+body {
+  min-height: 100vh;
+  background: center no-repeat url(../src/assets/bg-crypto.jpg);
+  background-size: cover;
+}

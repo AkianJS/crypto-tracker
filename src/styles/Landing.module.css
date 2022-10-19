@@ -1,0 +1,95 @@
+
+.container {
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: repeat(2, 360px);
+  text-align: center;
+  place-content: center;
+  gap: 20px 10px;
+  position: relative;
+}
+
+
+
+.cryptoContainer,
+.fiatContainer  {
+    padding-top: 1rem;
+    height: 40vh;
+    border-radius: 4px;
+    background-color: rgba(255, 255, 255, .3);
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+    overflow: hidden;
+}
+
+.cryptoContainer option,
+.fiatContainer option
+{
+  outline: none;
+  background: transparent;
+  border: none;
+}
+
+.cryptoContainer select {
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+  outline: none;
+  background: #4db6ac;
+  border: none;
+  border-radius: 2px;
+  width: 40%;
+  color: #fff;
+}
+.coinInfo
+{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.cryptoIcon
+{
+  animation: spinD 1s infinite;
+}
+
+.info1
+{
+  transform: translateX(-200%);
+  transition: 0.4s;
+}
+
+.info2
+{
+  padding-top: 1rem;
+  transform: translateX(-120%);
+  transition: 0.6s;
+}
+
+
+.cryptoIcon:hover
+{
+  animation: none;
+  cursor: pointer;
+}
+
+.cryptoIcon:hover ~ .info1
+{
+  transform: translateX(0);
+}
+
+.cryptoIcon:hover ~ .info2
+{
+  transform: translateX(0);
+}
+
+@keyframes spinD {
+  to {
+    transform: rotate3d(0, 1, 0.5, 360deg);
+  }
+}
