@@ -10,8 +10,8 @@ function App() {
     <BrowserRouter className="App">
       <Navbar />
       <Routes>
-        <Route path="/akian-crypto-tracker/top40cryptos" element={<Top40Cryptos/>}/>
-        <Route path="/akian-crypto-tracker" element={<Home />} />
+        <Route path="/crypto-tracker/top40cryptos" element={<Top40Cryptos/>}/>
+        <Route path="/crypto-tracker" element={<Home />} />
       </Routes>
     </BrowserRouter>
   );

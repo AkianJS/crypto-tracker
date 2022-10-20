@@ -10,13 +10,13 @@ const Navbar = () => {
           <img width={35} src={svgLogo} alt="Logo" />
         </li>
         <li>
-          <Link to={"/akian-crypto-tracker"} className={styles.link}>
+          <Link to={"/crypto-tracker"} className={styles.link}>
             Home
           </Link>
         </li>
         <li>
           <Link
-            to={"/akian-crypto-tracker/top40cryptos"}
+            to={"/crypto-tracker/top40cryptos"}
             className={styles.link}
           >
             Top 40 Coins

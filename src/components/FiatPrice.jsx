@@ -7,7 +7,7 @@ import Spinner from "../styled-components/Spinner";
 const FiatPrice = ({ crypto }) => {
   const [isUsd, setIsUsd] = useState(true);
   const [cryptoData, setCryptoData] = useState();
-
+  console.log(crypto)
   useEffect(() => {
     getMultiData(crypto.CoinInfo.Name).then((data) => setCryptoData(data));
   }, [crypto]);

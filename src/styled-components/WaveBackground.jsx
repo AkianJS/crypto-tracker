@@ -1,6 +1,6 @@
 const WaveBackground = () => {
   return (
-    <div className="custom-shape-divider-bottom-1666197366">
+    <div style={{zIndex: '-1'}} className="custom-shape-divider-bottom-1666197366">
       <svg
         data-name="Layer 1"
         xmlns="http://www.w3.org/2000/svg"
