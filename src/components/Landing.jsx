@@ -32,7 +32,6 @@ const Landing = () => {
   if (!topCrypto) {
     return <Spinner />;
   }
-console.log(crypto)
   return (
     <section onChange={(e) => handleOptionChange(e)} className={styles.container}>
       <div className={styles.cryptoContainer}>

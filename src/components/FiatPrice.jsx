@@ -14,11 +14,16 @@ const FiatPrice = ({ crypto }) => {
 
   useEffect(() => {
     getMultiData(crypto.CoinInfo.Name).then((data) => setCryptoData(data));
-  }, [crypto]);
+
+    return () => {
+      getMultiData(crypto.CoinInfo.Name).then((data) => setCryptoData(data));
+    }
+  }, [crypto.CoinInfo.Name]);
 
   if (!cryptoData) {
-    return <p>Holaa</p>;
+    return <Spinner/>;
   }
+
   const fiatInfo = isUsd
     ? cryptoData?.DISPLAY[`${crypto.CoinInfo.Name}`]?.USD
     : cryptoData?.DISPLAY[`${crypto.CoinInfo.Name}`]?.ARS;
