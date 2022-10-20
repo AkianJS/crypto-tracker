@@ -93,3 +93,11 @@
     transform: rotate3d(0, 1, 0.5, 360deg);
   }
 }
+
+@media (max-width: 750px)
+{
+  .container
+  {
+    grid-template-columns: 300px;
+  }
+}
