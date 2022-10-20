@@ -9,26 +9,32 @@ const Landing = () => {
   const [crypto, setCrypto] = useState(null);
   const [topCrypto, setTopCrypto] = useState(null);
   const [cryptoData, setCryptoData] = useState(null);
-  const optionRef = useRef();
   const image = "https://www.cryptocompare.com";
 
   useEffect(() => {
     getTopTewnty(20)
       .then((resp) => {
         setTopCrypto(resp.Data);
-        setCrypto(resp.Data[0 ])
+        setCrypto(resp.Data[0])
       })
       .catch((e) => {
         console.log(e);
       });
   }, []);
 
+  const handleOptionChange = (e) => {
+    const newCrypto = topCrypto.find((item) => {
+      return e.target.value == item.CoinInfo.Name
+    })
+    if (newCrypto) setCrypto(newCrypto)
+  }
+
   if (!topCrypto) {
     return <Spinner />;
   }
-
+console.log(crypto)
   return (
-    <section className={styles.container}>
+    <section onChange={(e) => handleOptionChange(e)} className={styles.container}>
       <div className={styles.cryptoContainer}>
         <label className={styles.label} htmlFor="crypto">
           Pick a cryptocurrency
@@ -37,8 +43,6 @@ const Landing = () => {
         <select name="crypto" id="crypto" placeholder="Cryptos">
           {topCrypto.map((item) => (
             <Cryptos
-              optionRef={optionRef}
-              setCrypto={setCrypto}
               key={item.CoinInfo.Id}
               crypto={item}
             />

@@ -1,14 +1,10 @@
 import styles from '../styles/Cryptos.module.css'
 
-const Cryptos = ({crypto, setCrypto, optionRef}) => {
+const Cryptos = ({crypto}) => {
 
   return (
     <option className={styles.option} 
-    ref={optionRef}
-    onClick={() => {
-      setCrypto(crypto)
-    }}
-    value={crypto.CoinInfo.Id}>
+    value={crypto.CoinInfo.Name}>
       {crypto.CoinInfo.Name} 
 
     </option>

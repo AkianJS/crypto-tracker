@@ -7,13 +7,17 @@ import Spinner from "../styled-components/Spinner";
 const FiatPrice = ({ crypto }) => {
   const [isUsd, setIsUsd] = useState(true);
   const [cryptoData, setCryptoData] = useState();
-  console.log(crypto)
+
+  const handleFiatChange = (e) => {
+    e.target.value == 'USD' ? setIsUsd(true) : setIsUsd(false)
+  }
+
   useEffect(() => {
     getMultiData(crypto.CoinInfo.Name).then((data) => setCryptoData(data));
   }, [crypto]);
 
   if (!cryptoData) {
-    return undefined;
+    return <p>Holaa</p>;
   }
   const fiatInfo = isUsd
     ? cryptoData?.DISPLAY[`${crypto.CoinInfo.Name}`]?.USD
@@ -21,23 +25,14 @@ const FiatPrice = ({ crypto }) => {
 
   return (
     <div className={styles.container}>
-      <select placeholder="FIAT" name="FIAT" id="FIAT">
-        <option
-          onClick={() => {
-            setIsUsd(true);
-          }}
-          value="USD"
-        >
-          USD
-        </option>
-        <option
-          onClick={() => {
-            setIsUsd(false);
-          }}
-          value="ARS"
-        >
-          ARS
-        </option>
+      <select
+        onChange={e => handleFiatChange(e)}
+        placeholder="FIAT"
+        name="FIAT"
+        id="FIAT"
+      >
+        <option value="USD">USD</option>
+        <option value="ARS">ARS</option>
       </select>
       <div className={styles.info}>
         {fiatInfo ? (
