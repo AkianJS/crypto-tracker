@@ -19,6 +19,5 @@
 
 body {
   min-height: 100vh;
-  background: center no-repeat url(../src/assets/bg-crypto.jpg);
-  background-size: cover;
+  background: center no-repeat contain url(../src/assets/bg-crypto.jpg);
 }

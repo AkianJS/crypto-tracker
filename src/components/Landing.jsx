@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import { getTopTewnty } from "../utils/getMultiData";
 import Cryptos from "./Cryptos";
 import styles from "../styles/Landing.module.css";
